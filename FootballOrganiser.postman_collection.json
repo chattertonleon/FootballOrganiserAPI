@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "de45a11f-c9fa-4bec-9a1c-d36288654ebe",
+		"name": "FootballOrganiser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21267857"
+	},
+	"item": [
+		{
+			"name": "GetAllPlayers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/GetPlayers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"GetPlayers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddPlayer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Luke\",\r\n    \"surname\": \"Marlow\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/AddPlayer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"AddPlayer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddGame",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"2022-08-03\",\r\n    \"kick_off\":\"18:00\",\r\n    \"finish_time\":\"19:00\",\r\n    \"team_1_name\":\"dogs\",\r\n    \"team_2_name\":\"cats\",\r\n    \"price_per_player\":\"6.00\",\r\n    \"players_per_team\":\"7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/AddGame",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"AddGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssignPlayerToGame",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"player_id\":\"1\",\r\n    \"game_id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/SetPlayerToGame",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"SetPlayerToGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetPaidStatusTrue",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"game_id\":\"1\",\r\n    \"player_id\":\"1\",\r\n    \"paid\":\"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/SetPaid",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"SetPaid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetPaidStatusFalse",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"game_id\":\"1\",\r\n    \"player_id\":\"1\",\r\n    \"paid\":\"false\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/SetNotPaid",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"SetNotPaid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssignPlayerToTeam",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"player_id\":\"1\",\r\n    \"game_id\":\"1\",\r\n    \"team\":\"dogs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/SetPlayerToTeam",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"SetPlayerToTeam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTeams",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"game_id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/GetTeams",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"GetTeams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPlayersInGame",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"game_id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/GetPlayersInGame",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"GetPlayersInGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGames",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/GetGames",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"GetGames"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
